@@ -223,10 +223,7 @@ alloc_lfile(nm, num)
 	    (void) strncpy(Lf->fd, nm, FDLEN - 1);
 	    Lf->fd[FDLEN - 1] = '\0';
 	} else if (num >= 0) {
-	    if (num < 10000)
 		(void) snpf(Lf->fd, sizeof(Lf->fd), "%4d", num);
-	    else
-		(void) snpf(Lf->fd, sizeof(Lf->fd), "*%03d", num % 1000);
 	} else
 	    Lf->fd[0] = '\0';
 	Lf->dev_ch = Lf->fsdir = Lf->fsdev = Lf->nm = Lf->nma = (char *)NULL;
