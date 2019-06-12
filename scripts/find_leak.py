@@ -18,7 +18,7 @@ while True:
                 elif fd_to_type[fd]['dead']:
                         now = datetime.datetime.now()
                         delta = (now-fd_to_type[fd]['dead_since']).total_seconds()
-                        num_dead++
+                        num_dead += 1
                         print 'leak', fd, fd_to_type[fd]['type'], '->', sock_type, '(', fd_to_type[fd]['name'], ') (DEAD) for', delta, 's'
                 elif fd_to_type[fd]['type'] != sock_type and sock_type == 'sock':
                         fd_to_type[fd]['dead'] = True
