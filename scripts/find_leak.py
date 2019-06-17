@@ -12,7 +12,8 @@ while True:
                 fd = parts[3]
                 sock_type = parts[4]
                 if fd not in fd_to_type: #register
-                        fd_to_type[fd] = {'type': sock_type, 'name': parts[-2], 'dead': sock_type == 'sock', 'dead_since': datetime.datetime.now()}
+                        # fd_to_type[fd] = {'type': sock_type, 'name': parts[-2], 'dead': sock_type == 'sock', 'dead_since': datetime.datetime.now()}
+                        fd_to_type[fd] = {'type': sock_type, 'name': parts[-2]}
                 elif fd_to_type[fd]['dead'] and sock_type != 'sock': # no longer sock
                         fd_to_type[fd]['dead'] = False  
                 elif fd_to_type[fd]['dead']:
